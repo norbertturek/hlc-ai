@@ -1,0 +1,44 @@
+[
+    {
+        "name": "OmegaMe FORTE",
+        "description": "Wysoko skoncentrowane kwasy omega 3 DHA i EPA z ryb w płynie. Wspiera zdrowie serca¹, dobry wzrok i funkcjonowanie mózgu². Wzbogacony o witaminę D i A dla wsparcia odporności³",
+        "price": "229,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/ZmhT1Zm069VX1o3s_img_OmegaMe-FORTE-galeria1.png?auto=format%2Ccompress%3Fauto%3Dcompress%2Cformat&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/omega-me-forte"
+    },
+    {
+        "name": "GlowMe mix",
+        "description": "Kolagen do picia mix smaków, wspiera zdrowy wygląd skóry (witamina A, ekstrakt z nasion winorośli właściwej). Zawiera kolagen, który jest budulcem skóry. Dzięki nasionom z winorośli właściwej chroni przed szkodliwym działaniem wolnych rodników.",
+        "price": "199,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/Z36gGpbqstJ99Lj9_img_GlowMe-mix-galeria1-1-.png?auto=format%2Ccompress&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/glow-me-mix"
+    },
+    {
+        "name": "Glow On Serum Tetravit C 10",
+        "description": "Serum do twarzy z witaminą C. Wydobywa naturalny blask skóry, wyrównuje koloryt, ujędrnia i wygładza skórę.",
+        "price": "249,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/Zn1xTh5LeNNTwmTB_img_Serum_TetraVIT_C_Glow_On_galeria1.png?auto=format%2Ccompress%3Fauto%3Dcompress%2Cformat&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/glow-on-serum-tetravit-c-10"
+    },
+    {
+        "name": "MagneMe MEN",
+        "description": "Magnez z witaminą B6 dla mężczyzn. Wspiera pracę mięśni (magnez), dba o układ nerwowy (magnez, witamina B6), pomaga utrzymać prawidłowe funkcje psychologiczne (magnez).",
+        "price": "159,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/Z4EYAZbqstJ99UNA_img_MagneMe_MAN_galeria1.png?auto=format%2Ccompress&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/magne-me-men"
+    },
+    {
+        "name": "OmegaMe MEN (120 kapsułek)",
+        "description": "Kwasy tłuszczowe omega-3 EPA i DHA z ryb dla mężczyzn. Wspiera zdrowie serca¹, dba o prawidłowe funkcjonowanie mózgu², pomaga utrzymać prawidłowe widzenie².",
+        "price": "209,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/Z4EXkpbqstJ99UMP_img_OmegaMe-galeria1.png?auto=format%2Ccompress&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/omega-me-120-men"
+    },
+    {
+        "name": "Maślan Sodu FORTE (120 kapsułek)",
+        "description": "Żywność specjalnego przeznaczenia medycznego. Wysoka zawartość substancji czynnej - kwasu masłowego. Pomocny w odżywianiu przy wielu chorobach gastroenterologicznych.",
+        "price": "189,00 PLN",
+        "image_url": "https://images.prismic.io/healthlabs/73c36a1c-1254-42bb-80c8-0fe1defe004d_img_Ma%C5%9Blan-galeria1.png?auto=compress%2Cformat&w=1024",
+        "product_url": "https://www.healthlabs.care/pl/produkt/maslan-sodu-forte-120"
+    }
+]
