@@ -56,48 +56,17 @@
 
     <footer class="border-t bg-white/50 backdrop-blur-xl p-4">
       <div class="mx-auto max-w-4xl">
-        <div class="relative rounded-2xl bg-white/40 backdrop-blur-lg p-1.5 shadow-[0_2px_24px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.03]">
-          <form @submit.prevent="handleSubmit" class="relative flex gap-3 rounded-xl bg-white/60 backdrop-blur-lg p-2">
-            <div class="relative flex-1 flex items-end">
-              <textarea
-                v-model="newMessage"
-                rows="1"
-                placeholder="Opisz swoje potrzeby zdrowotne..."
-                class="block w-full resize-none rounded-xl bg-transparent px-4 py-2.5 text-gray-700 placeholder-gray-400/70 transition-all duration-200 focus:outline-none disabled:opacity-50 pr-2"
-                style="min-height: 44px; max-height: 200px; overflow-y: auto;"
-                @input="autoGrow"
-                @keydown.meta.enter.prevent="handleSubmit"
-                ref="messageInput"
-                :disabled="isLoading"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="flex-shrink-0 group relative flex h-11 items-center gap-3 rounded-xl bg-gradient-to-b from-emerald-500 to-emerald-600 pl-5 pr-4 font-medium text-white shadow-[0_2px_12px_rgba(16,185,129,0.25)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(16,185,129,0.35)] hover:translate-y-[-1px] active:translate-y-[1px] focus:outline-none disabled:opacity-50 self-end overflow-hidden"
-              :disabled="isLoading || !newMessage.trim()"
-            >
-              <div class="flex items-center gap-3 relative z-10">
-                <span class="text-[13px] tracking-wide font-medium">{{ isLoading ? 'Szukam...' : 'Wyślij' }}</span>
-                <div class="h-3.5 w-[1px] bg-white/20"></div>
-                <kbd class="text-[12px] text-emerald-100 font-medium tracking-tight bg-emerald-600/50 px-1.5 py-0.5 rounded-md border border-emerald-400/30">⌘ + ↵</kbd>
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.15] to-transparent -translate-x-full group-hover:translate-x-full duration-1000 transition-transform ease-in-out"></div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/[0.1] to-transparent"></div>
-            </button>
-          </form>
-        </div>
+        <ChatInput @message-sent="scrollToBottom" />
       </div>
     </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import ProductRecommendation from '~/components/ProductRecommendation.vue'
+import ChatMessage from '~/components/ChatMessage.vue'
+import ChatInput from '~/components/ChatInput.vue'
 
-const { messages, isLoading, error, sendMessage, currentStreamingMessage } = useChat()
-const newMessage = ref("")
-const messageInput = ref<HTMLTextAreaElement>()
+const { messages, isLoading, error, currentStreamingMessage } = useChat()
 const chatContainer = ref<HTMLElement>()
 const showScrollButton = ref(false)
 const showNewMessages = ref(false)
@@ -155,26 +124,6 @@ onMounted(() => {
 onUnmounted(() => {
   chatContainer.value?.removeEventListener('scroll', handleScroll)
 })
-
-const handleSubmit = async () => {
-  if (isLoading.value || !newMessage.value.trim()) return
-  
-  const message = newMessage.value.trim().replace(/\n{3,}/g, '\n\n')
-  newMessage.value = ""
-  if (messageInput.value) {
-    messageInput.value.style.height = 'auto'
-    messageInput.value.focus()
-  }
-  
-  await sendMessage(message)
-  scrollToBottom()
-}
-
-const autoGrow = () => {
-  if (!messageInput.value) return
-  messageInput.value.style.height = 'auto'
-  messageInput.value.style.height = Math.min(messageInput.value.scrollHeight, 200) + 'px'
-}
 </script>
 
 <style>

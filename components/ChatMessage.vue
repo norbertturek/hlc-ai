@@ -26,6 +26,7 @@
 
 <script setup lang="ts">
 import type { Product } from '~/composables/useChat'
+import ProductRecommendation from '~/components/ProductRecommendation.vue'
 
 defineProps<{
   message: string

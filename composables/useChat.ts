@@ -16,12 +16,13 @@ export interface Product {
   url: string
 }
 
-export const useChat = () => {
-  const messages = ref<ChatMessage[]>([])
-  const isLoading = ref(false)
-  const error = ref<string | null>(null)
-  const currentStreamingMessage = ref<ChatMessage | null>(null)
+// Create shared state
+const messages = ref<ChatMessage[]>([])
+const isLoading = ref(false)
+const error = ref<string | null>(null)
+const currentStreamingMessage = ref<ChatMessage | null>(null)
 
+export const useChat = () => {
   const extractProducts = (content: string): Product[] => {
     const extractedProducts: Product[] = []
     console.log('Szukam produktów w treści:', content)
