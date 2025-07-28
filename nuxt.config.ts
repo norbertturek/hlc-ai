@@ -5,7 +5,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   runtimeConfig: {
-    openaiApiKey: '', // This will be overridden by environment variables
+    openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
+    public: {
+      openaiApiKey: process.env.NUXT_OPENAI_API_KEY
+    }
   },
   compatibilityDate: '2025-02-07'
 })
