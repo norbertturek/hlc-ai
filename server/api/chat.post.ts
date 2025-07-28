@@ -2,8 +2,10 @@ import OpenAI from 'openai'
 import { defineEventHandler, readBody, setHeader } from 'h3'
 import products from '../../product.data.json'
 
+const config = useRuntimeConfig()
+
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: config.openaiApiKey
 })
 
 const SYSTEM_PROMPT = `Jesteś asystentem HealthLabs Care, który pomaga w doborze produktów na podstawie potrzeb zdrowotnych.
